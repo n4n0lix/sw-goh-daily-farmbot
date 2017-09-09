@@ -4,12 +4,12 @@ The main porpuse is to automate doing the daily activities and collecting the ba
 
 ## Warning: It's not adviced to run the script on your own right now WITHOUT MAKING ADJUSTMENTS TO THE SCRIPT. It will 100% fail at some point in the script. At the moment see it more as A HEADSTART TO CREATE YOUR OWN SCRIPT.
 
-Requirements:
+**Requirements:**
 - 1920x1080 Monitor (all click coordinates are hardcoded atm)
 - Andyroid 46.16.819
 - Star Wars: Galaxy of Heroes installed on Andyroid (AND NOTHING ELSE)
 
-Preparations:
+**Preparations:**
 - Prepare your default teams for 
     - Squad Arena
     - Fleet Arena
@@ -25,16 +25,16 @@ Preparations:
 - Atleast 108 Normal Energy
 - Atleast 12 Cantina Energy
     
-How to start:
+**How to start:**
 1. Compile the script or download  *swhog-daily-farmbot.exe*
 2. Adjust the path in the GUI so it points to the Andy.exe
 3. Adjust the waiting time for Andyroid and SW:GOH to start.
 5. Press *Start* and let the magic happen
 
-Can I run it in the background?
+**Can I run it in the background?**
 Completly background automated, start it, do something else.
 
-What resources do I get?
+**What resources do I get?**
 Basicall all daily activities and some extra shards.
 - Ashoka Shards
 - Old Ben Shards
@@ -45,7 +45,7 @@ Basicall all daily activities and some extra shards.
 - XXX Sim-Tickets
 - XXX Credits
 
-What is it doing?
+**What is it doing?**
 - Available daily (hero and ship) challenges 
 - Auto battles the first 6 fights of Galactic War
 - Auto battles 5 squad arena fights
