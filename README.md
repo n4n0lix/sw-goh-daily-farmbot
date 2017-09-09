@@ -7,7 +7,7 @@ The farmbot will never be 100% failsafe because my priority is to have it 100% a
 **Known errors:**
 - Can't do the *"buy 3 shipments"* daily activity (bcz no mousedrag doable)
 - Can't do the *"equip 1 equipment"* daily activity (bcz no background pixel reading)
-- *"do 1 mod upgrade"* is hardcoded to strongest character, mod position 4
+- *"do 1 mod upgrade"* is hardcoded to strongest character, mod position 4 (Strategy would be to hardcode this to weakest character mod slot 1)
 
 ## Warning: It's not adviced to run the script on your own right now WITHOUT MAKING ADJUSTMENTS TO THE SCRIPT. It will 100% fail at some point in the script. At the moment see it more as A HEADSTART TO CREATE YOUR OWN SCRIPT.
 
