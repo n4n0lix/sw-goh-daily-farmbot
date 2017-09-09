@@ -22,8 +22,8 @@ The main porpuse is to automate doing the daily activities and collecting the ba
 - 5D Hard Light Side 3\* completed
 - 5E Hard Light Side not completed
 - Have enough Sim Tickets (50 should be more than enough)
-- Atleast 108 Normal Energy
-- Atleast 12 Cantina Energy
+- Atleast 108 Normal Energy (**important** otherwise it will buy energy with crystals by accident)
+- Atleast 12 Cantina Energy (**important** otherwise it will buy energy with crystals by accident)
     
 **How to start:**
 1. Compile the script or download  *swhog-daily-farmbot.exe*
