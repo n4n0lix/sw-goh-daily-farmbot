@@ -21,6 +21,7 @@ The farmbot will never be 100% failsafe because my priority is to have it 100% a
     - Squad Arena
     - Fleet Arena
     - Galactic Conflict (Has to be able to reliably auto battle the first 6 fights)
+- Set fight speed to *4x*
 - Have Ship-Cantina unlocked
 - All Hero Challenges 3\*
 - All Ship Challenges 3\*
