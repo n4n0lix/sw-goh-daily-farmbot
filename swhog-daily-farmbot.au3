@@ -9,6 +9,9 @@
 #include <Debug.au3>
 #include <Date.au3>
 
+#include <GuiEdit.au3>
+#include <ScrollBarsConstants.au3>
+
 GUISetState(@SW_SHOW)
 #Region ### START Koda GUI section ### Form=
 $Form1 = GUICreate("SW:GOH Daily Farmbot", 391, 407, 302, 148)
@@ -16,7 +19,7 @@ GUISetBkColor(0xBFCDDB)
 $Label1 = GUICtrlCreateLabel("SW:GOH Daily Farmbot", 8, 8, 262, 44)
 GUICtrlSetFont(-1, 24, 400, 0, "Trebuchet MS")
 $Button1 = GUICtrlCreateButton("Start", 272, 368, 107, 25)
-$Edit1 = GUICtrlCreateEdit("", 8, 136, 369, 225, BitOR($ES_WANTRETURN,$WS_VSCROLL))
+$Edit1 = GUICtrlCreateEdit("", 8, 136, 369, 225, BitOR($ES_WANTRETURN,$WS_VSCROLL,$ES_AUTOVSCROLL))
 GUICtrlSetFont(-1, 8, 800, 0, "Consolas")
 GUICtrlSetColor(-1, 0xFFFFFF)
 GUICtrlSetBkColor(-1, 0x000000)
@@ -58,7 +61,7 @@ Func StartAndyAndGame()
 EndFunc
 
 Func Routine()
-   _DebugSetup("a")
+   ;_DebugSetup("a")
    Debug("starting routine ...")
 
    $hwnd = WinGetHandle("Andy 46.16.819")
@@ -95,8 +98,8 @@ Func Routine()
    FleetArena_DoBattle();       +4:00
 
    ;--------------------------- 16:00
-   GalacticWar3To4();           +4:00
-
+   ;GalacticWar3To4();           +4:00
+   WaitMinutes(4);
    ;--------------------------- 20:00
    Do_Challenges2_5();          +0:00
    Character_MinimalTraining(); +0:00
@@ -110,7 +113,8 @@ Func Routine()
    FleetArena_DoBattle();       +4:00
 
    ;--------------------------- 26:00
-   GalacticWar5To6();           +4:00
+;   GalacticWar5To6();          +4:00
+   WaitMinutes(4)
 
    ;--------------------------- 30:00
    Do_Challenges3_5();          +0:00
@@ -119,13 +123,13 @@ Func Routine()
 
    Debug("[TIME] 30:00")
    ;========================== (30:00) ===
-   Do_Challenges4_5();          +0:00
+   Do_Challenges4_5();          +0:00    *Fail to reach challenges menu*
 
    ;--------------------------- 30:00
    SquadArena_DoBattle();       +2:00
 
    ;--------------------------- 32:00
-   FleetArena_DoBattle();       +4:00
+   FleetArena_DoBattle();       +4:00    *Didn't start the battle, stuck on characters menu*
 
    ;--------------------------- 36:00
    Ashoka_LightShards();        +0:00
@@ -161,6 +165,8 @@ Func Routine()
    Debug("Routine completed")
 EndFunc
 
+; Ship Challenges on monday 4-6 each 2 times
+
 ;========================================================
 ;=============         Navigation           =============
 ;========================================================
@@ -185,18 +191,33 @@ EndFunc
 Func Home()
    Debug("[ NAVI ] -> Home")
    Touch(1822, 85)
-   Touch(1822, 85)
+   Touch(1822, 85, 2000)
 EndFunc
 
 Func Back()
    Debug("[ NAVI ] Back")
-   Touch(80, 80)
+   Touch(80, 80, 2000)
+EndFunc
+
+Func Goto_Activities()
+   Home()
+   Touch(1650, 925, 2000)
+EndFunc
+
+Func Goto_Challenges()
+   Goto_Characters()
+   Debug("[ NAVI ] -> Challenges")
+   Touch(1822, 85, 500)
+   Touch(40, 620, 50)
+   Touch(40, 620, 50)
+   Touch(40, 620, 50)
+   Touch(40, 620, 2000)
 EndFunc
 
 Func Goto_Characters()
    Home()
    Debug("[ NAVI ] -> Characters")
-   Touch(110, 240, 1000)
+   Touch(110, 240, 3000)
 EndFunc
 
 Func Goto_Ships()
@@ -208,58 +229,49 @@ EndFunc
 Func Goto_ShipChallenges()
    Goto_ShipBattles()
    Debug("[ NAVI ] -> Ship Challenges")
-   Touch(1396, 518)
-EndFunc
-
-Func Goto_Challenges()
-   Goto_Characters()
-   Debug("[ NAVI ] -> Challenges")
-   Touch(1822, 85, 550)
-   Touch(40, 620)
+   Touch(1396, 518, 2000)
 EndFunc
 
 Func Goto_LightSideHard()
    Home()
    Debug("[ NAVI ] -> Light Side Hard")
-   Touch(700, 670)
-   Touch(1620, 940)
+   Touch(700, 670, 2000)
+   Touch(1620, 940, 2000)
 EndFunc
 
 Func Goto_DarkSideHard()
    Home()
    Debug("[ NAVI ] -> Dark Side Hard")
-   Touch(1205, 628)
-   Touch(1620, 940)
+   Touch(1205, 628, 2000)
+   Touch(1620, 940, 2000)
 EndFunc
 
 Func Goto_ShipBattles()
    Goto_Characters()
    Debug("[ NAVI ] -> Ship Battles")
-   Touch(1822, 85, 500)
-   Touch(1860, 391)
+   Touch(1822, 85, 400)
+   Touch(1810,330, 50)
+   Touch(1810,330, 50)
+   Touch(1810,330, 50)
+   Touch(1810,330, 2000)
 EndFunc
 
 Func Goto_SquadArena()
    Home()
    Debug("[ NAVI ] -> Squad Arena")
-   Touch(1377, 396)
+   Touch(1377, 396, 2000)
 EndFunc
 
 Func Goto_GalacticWar()
    Home()
    Debug("[ NAVI ] -> Galactic War")
-   Touch(1603, 329)
+   Touch(1603, 329, 2000)
 EndFunc
 
 Func Goto_Cantina()
    Home()
    Debug("[ NAVI ] -> Cantina")
-   Touch(552, 403)
-EndFunc
-
-Func Goto_Activities()
-   Home()
-   Touch(1650, 925)
+   Touch(552, 403, 2000)
 EndFunc
 
 Func Reward_Continue()
@@ -474,7 +486,7 @@ Func Cantina_OldBen()
    DoBattlesMultiSim(20)
 EndFunc
 
-Func GalacticWar1To4()
+Func GalacticWar1To2()
    Debug("[ACTION] Galactic War 1-2")
    Goto_GalacticWar()
    ; Reset Galactic War
@@ -547,10 +559,10 @@ EndFunc
 Func FleetArena_DoBattle()
    Debug("[ACTION] Fleet Arena Battle")
    Goto_ShipBattles()
-   Touch(978, 687, 1000)
-   Touch(368, 879, 1500)
+   Touch(978, 687, 2000)
+   Touch(368, 879, 2000)
    Touch(1411, 922, 1000)
-   WaitSeconds(10)
+   WaitSeconds(15)
    DoAutobattle()
    WaitMinutes(4)
    Touch(962, 674)
@@ -677,9 +689,12 @@ Func Touch($x, $y, $delay=1000)
 EndFunc
 
 Func Debug($msg)
-   _DebugOut($msg)
+   ;_DebugOut($msg)
    $debugs = $debugs & $msg & @CRLF
    GUICtrlSetData($Edit1, $debugs)
+   $iEnd = StringLen(GUICtrlRead($Edit1))
+   _GUICtrlEdit_SetSel($Edit1, $iEnd, $iEnd)
+   _GUICtrlEdit_Scroll($Edit1, $SB_SCROLLCARET)
 EndFunc
 
 Func _MakeLong($LoWord,$HiWord)
