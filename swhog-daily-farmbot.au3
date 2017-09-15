@@ -98,56 +98,55 @@ Func Routine()
    FleetArena_DoBattle();       +4:00
 
    ;--------------------------- 16:00
-   ;GalacticWar3To4();           +4:00
+   ;GalacticWar3To4();          +4:00
    WaitMinutes(4);
+
+   Character_ModUpgrade();      +0:00
+   Cantina_OldBen();            +0:00
+   Character_MinimalTraining(); +0:00
+   Ashoka_LightShards();        +0:00
+   Ashoka_DarkShards();         +0:00 *Fails here sometimes*
+   Ship_MinimalEnhancement();   +0:00
+
    ;--------------------------- 20:00
    Do_Challenges2_5();          +0:00
-   Character_MinimalTraining(); +0:00
 
    Debug("[TIME] 20:00")
    ;========================== (20:00) ===
    ;--------------------------- 20:00
-   SquadArena_DoBattle();       +2:00
+   ;SquadArena_DoBattle();      +2:00
+   WaitMinutes(2);
 
    ;--------------------------- 22:00
-   FleetArena_DoBattle();       +4:00
-
+   ;FleetArena_DoBattle();      +4:00
+   WaitMinutes(4);
    ;--------------------------- 26:00
-;   GalacticWar5To6();          +4:00
+   ;GalacticWar5To6();          +4:00
    WaitMinutes(4)
 
    ;--------------------------- 30:00
    Do_Challenges3_5();          +0:00
-   Character_ModUpgrade();      +0:00
-   Cantina_OldBen();            +0:00
 
    Debug("[TIME] 30:00")
    ;========================== (30:00) ===
-   Do_Challenges4_5();          +0:00    *Fail to reach challenges menu*
+   Do_Challenges4_5();          +0:00
 
    ;--------------------------- 30:00
-   SquadArena_DoBattle();       +2:00
+   ;SquadArena_DoBattle();       +2:00
+   WaitMinutes(2);
 
    ;--------------------------- 32:00
-   FleetArena_DoBattle();       +4:00    *Didn't start the battle, stuck on characters menu*
+   ;FleetArena_DoBattle();       +4:00
+   WaitMinutes(4);
 
    ;--------------------------- 36:00
-   Ashoka_LightShards();        +0:00
-   Ashoka_DarkShards();         +0:00
    WaitMinutes(4);              +4:00
 
    Debug("[TIME] 40:00")
    ;========================== (40:00) ===
    Do_Challenges5_5();          +0:00
-   Ship_MinimalEnhancement();   +0:00
 
    ;--------------------------- 40:00
-   SquadArena_DoBattle();       +2:00
-
-   ;--------------------------- 42:00
-   FleetArena_DoBattle();       +4:00
-
-   ;--------------------------- 46:00
    Goto_Activities()
    ClaimActivity()	; "Complete 2 Challenges"
    ClaimActivity()	; "Finish 3 Light Side Battles"
@@ -288,8 +287,8 @@ EndFunc
 Func Ship_MinimalEnhancement()
    Debug("[ACTION] Minimal Ship Enhancement")
    Goto_Ships()
-   Characters_ResetFilter()
-   Characters_ResetSort()
+   ;Characters_ResetFilter()
+   ;Characters_ResetSort()
    Ships_SetFilterActivated()
    Characters_SetSortFilter()
    Characters_ToggleSort()
@@ -305,16 +304,16 @@ Func Ship_MinimalEnhancement()
    Back()
    Back()
 
-   Characters_ResetFilter()
-   Characters_ResetSort()
-   Characters_ToggleSort()
+   ;Characters_ResetFilter()
+   ;Characters_ResetSort()
+   ;Characters_ToggleSort()
 EndFunc
 
 Func Character_MinimalTraining()
    Debug("[ACTION] Minimal Character Training")
    Goto_Characters()
-   Characters_ResetFilter()
-   Characters_ResetSort()
+   ;Characters_ResetFilter()
+   ;Characters_ResetSort()
    Characters_SetFilterActivated()
    Characters_SetSortFilter()
    Characters_ToggleSort()
@@ -330,9 +329,9 @@ Func Character_MinimalTraining()
    Back()
    Back()
 
-   Characters_ResetFilter()
-   Characters_ResetSort()
-   Characters_ToggleSort()
+   ;Characters_ResetFilter()
+   ;Characters_ResetSort()
+   ;Characters_ToggleSort()
 EndFunc
 
 Func Character_ModUpgrade()
@@ -683,7 +682,7 @@ Func WaitSeconds($secs)
    Sleep($secs * 1000)
 EndFunc
 
-Func Touch($x, $y, $delay=1000)
+Func Touch($x, $y, $delay=1500)
    ControlClick($hwnd, "", 0, "left", 1, $x, $y)
    Sleep($delay)
 EndFunc
