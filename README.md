@@ -4,7 +4,7 @@ The main porpuse is to automate doing the daily activities and collecting the ba
 
 The farmbot will never be 100% failsafe because my priority is to have it 100% able to run in the background without annoying me. But as I haven't figured out pixelreading on background windows this will always be a rather fragile script. Also, another big problem right now is that we can't do mousedrags in a window that is in the background, if someone finds out how to do this it'll make things a bit easier.
 
-## Warning: It's not adviced to run the script without adjusting some things, or the script might do unwanted things (worst case: accidently buy energy with shards). ~~It will 100% fail at some point in the script. At the moment see it more as A HEADSTART TO CREATE YOUR OWN SCRIPT~~.
+## Warning: It's not adviced to run the script without adjusting some lines, or the script might show undesired behaviour (worst case: accidently buy energy with shards).
 
 **Known errors:**
 - Can't do the *"buy 3 shipments"* daily activity (bcz no mousedrag doable)
