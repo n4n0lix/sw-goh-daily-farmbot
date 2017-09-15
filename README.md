@@ -4,7 +4,7 @@ The main porpuse is to automate doing the daily activities and collecting the ba
 
 The farmbot will never be 100% failsafe because my priority is to have it 100% able to run in the background without annoying me. But as I haven't figured out pixelreading on background windows this will always be a rather fragile script. Also, another big problem right now is that we can't do mousedrags in a window that is in the background, if someone finds out how to do this it'll make things a bit easier.
 
-## Warning: It's not adviced to run the script on your own right now WITHOUT MAKING ADJUSTMENTS TO THE SCRIPT. It will 100% fail at some point in the script. At the moment see it more as A HEADSTART TO CREATE YOUR OWN SCRIPT.
+## Warning: It's not adviced to run the script without adjusting some things, or the script might do unwanted things (worst case: accidently buy energy with shards). ~~It will 100% fail at some point in the script. At the moment see it more as A HEADSTART TO CREATE YOUR OWN SCRIPT~~.
 
 **Known errors:**
 - Can't do the *"buy 3 shipments"* daily activity (bcz no mousedrag doable)
@@ -21,6 +21,7 @@ The farmbot will never be 100% failsafe because my priority is to have it 100% a
     - Squad Arena
     - Fleet Arena
     - Galactic Conflict (Has to be able to reliably auto battle the first 6 fights)
+- Galactic war must be resetable
 - Set fight speed to *4x*
 - Have Ship-Cantina unlocked
 - All Hero Challenges 3\*
@@ -43,20 +44,15 @@ The farmbot will never be 100% failsafe because my priority is to have it 100% a
 Completly background automated, start it, do something else.
 
 **What resources do I get?**
-Basicall all daily activities and some extra shards.
-- Ashoka Shards
-- Old Ben Shards
-- 200 Squad Arena Tokens
-- 400 Galactic War Tokens
-- XXX Fleet Arena Tokens
-- 62 Crystals from Daily Activities
-- XXX Sim-Tickets
-- XXX Credits
+- All the daily activities stuff
+- Some Ashoka Shards
+- Some Old Ben Shards
+- All challenges rewards
 
 **What is it doing?**
 - Available daily (hero and ship) challenges 
-- Auto battles the first 6 fights of Galactic War
-- Auto battles 5 squad arena fights
-- Auto battles 5 fleet arena fights
+- Resets and auto battles the first 2 fights of Galactic War
+- Auto battles 2 squad arena fights
+- Auto battles 2 fleet arena fights
 - Trains the lowest character with 1 of your lowest training droids
 - Enhances the lowest ship with 1 of your lowest training droids
